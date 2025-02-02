@@ -1,18 +1,10 @@
-# import google.generativeai as genai
-
-# genai.configure(api_key="AIzaSyCXe-yzo-d5vLkA2UOShlu77JoaNDUsE7I")
-# model = genai.GenerativeModel("gemini-1.5-flash")
-# print("model",model)
-# response = model.generate_content("what is the meaning of accenture?")
-# print("response text: ----",response.text)
-
 import os
 import streamlit as st
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import google.generativeai as gen_ai
 
 # Load environment variables from .env file
-load_dotenv()
+# load_dotenv()
 
 # Set up the page configuration
 st.set_page_config(
@@ -22,10 +14,12 @@ st.set_page_config(
 )
 
 # Get API Key
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+# GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
 # Configure the generative AI API
-gen_ai.configure(api_key=GOOGLE_API_KEY)
+# gen_ai.configure(api_key=GOOGLE_API_KEY)
+gen_ai.configure(api_key="AIzaSyCXe-yzo-d5vLkA2UOShlu77JoaNDUsE7I")
+
 model = gen_ai.GenerativeModel("gemini-1.5-flash")
 
 # Function to translate role for Streamlit messages
