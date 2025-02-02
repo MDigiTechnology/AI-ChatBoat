@@ -1,10 +1,6 @@
 import os
 import streamlit as st
-# from dotenv import load_dotenv
 import google.generativeai as gen_ai
-
-# Load environment variables from .env file
-# load_dotenv()
 
 # Set up the page configuration
 st.set_page_config(
@@ -13,13 +9,8 @@ st.set_page_config(
     layout="wide",  # This will allow more space for a wide layout
 )
 
-# Get API Key
-# GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
-
 # Configure the generative AI API
-# gen_ai.configure(api_key=GOOGLE_API_KEY)
 gen_ai.configure(api_key="AIzaSyCXe-yzo-d5vLkA2UOShlu77JoaNDUsE7I")
-
 model = gen_ai.GenerativeModel("gemini-1.5-flash")
 
 # Function to translate role for Streamlit messages
@@ -69,13 +60,6 @@ st.markdown("""
             margin-bottom: 5px;
         }
 
-        /* Title styling */
-        .stTitle {
-            font-size: 2.5em;
-            font-weight: bold;
-            color: #4B9CD3;
-        }
-
         /* Input box styling */
         .stTextInput input {
             font-size: 1.2em;
@@ -92,8 +76,8 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Display title
-st.title(":coffee: AI - ChatBot")
+# Use st.markdown with HTML to style the title (color red)
+st.markdown("<h1 style='color: red;'>☕ AI - ChatBot</h1>", unsafe_allow_html=True)
 
 # Display previous chat history
 for message in st.session_state.chat_history:
