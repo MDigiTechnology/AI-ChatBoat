@@ -41,7 +41,7 @@ st.markdown("""
             margin-bottom: 15px;
         }
 
-        /* User and assistant message styling */
+        /* User message styling */
         .user .stMarkdown {
             background-color: #DCF8C6;
             padding: 10px;
@@ -51,13 +51,15 @@ st.markdown("""
             margin-bottom: 5px;
         }
 
+        /* Assistant message styling */
         .assistant .stMarkdown {
-            background-color: #E9E9E9;
+            background-color: #F0F0F0;  /* Softer gray background */
             padding: 10px;
             border-radius: 10px;
             max-width: 70%;
             word-wrap: break-word;
             margin-bottom: 5px;
+            color: #333333;  /* Darker text color */
         }
 
         /* Input box styling */
@@ -76,7 +78,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Use st.markdown with HTML to style the title (color red)
+# Display title with custom color
 st.markdown("<h1 style='color: red;'>☕ AI - ChatBot</h1>", unsafe_allow_html=True)
 
 # Display previous chat history
