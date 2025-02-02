@@ -15,23 +15,20 @@ model = gen_ai.GenerativeModel("gemini-1.5-flash")
 
 # Function to translate role for Streamlit messages
 def translate_role_for_streamlit(user_role):
-    if user_role == "model":
-        return "assistant"
-    else:
-        return user_role
+    return "assistant" if user_role == "model" else user_role
 
 # Initialize chat history if not present in session state
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
 
-# Add custom CSS for styling
+# Add custom CSS for styling and fixing text color issues
 st.markdown("""
     <style>
         /* Background color and overall layout */
         .stApp {
             background-color: #f4f7fc;
             font-family: 'Arial', sans-serif;
-            color: black;
+            color: black !important;
         }
 
         /* Centering the chat messages */
@@ -50,6 +47,7 @@ st.markdown("""
             max-width: 70%;
             word-wrap: break-word;
             margin-bottom: 5px;
+            color: black !important;
         }
 
         /* Assistant message styling */
@@ -60,7 +58,15 @@ st.markdown("""
             max-width: 70%;
             word-wrap: break-word;
             margin-bottom: 5px;
-            color: #333333;  /* Darker text color */
+            color: #333333 !important;  /* Explicit dark text */
+        }
+
+        /* Force dark mode text correction */
+        @media (prefers-color-scheme: dark) {
+            .assistant .stMarkdown {
+                background-color: #222222 !important;  /* Dark background */
+                color: white !important;  /* White text for dark mode */
+            }
         }
 
         /* Input box styling */
@@ -70,6 +76,7 @@ st.markdown("""
             border-radius: 8px;
             border: 1px solid #ccc;
             width: 100%;
+            color: black !important;
         }
 
         /* Add spacing between messages and input */
