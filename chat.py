@@ -26,9 +26,7 @@ st.markdown("""
     <style>
         /* Background color and overall layout */
         .stApp {
-            background-color: #f4f7fc;
             font-family: 'Arial', sans-serif;
-            color: black !important;
         }
 
         /* Centering the chat messages */
