@@ -39,32 +39,20 @@ st.markdown("""
 
         /* User message styling */
         .user .stMarkdown {
-            background-color: #DCF8C6;
             padding: 10px;
             border-radius: 10px;
             max-width: 70%;
             word-wrap: break-word;
             margin-bottom: 5px;
-            color: black !important;
         }
 
         /* Assistant message styling */
         .assistant .stMarkdown {
-            background-color: #F0F0F0;  /* Softer gray background */
             padding: 10px;
             border-radius: 10px;
             max-width: 70%;
             word-wrap: break-word;
             margin-bottom: 5px;
-            color: #333333 !important;  /* Explicit dark text */
-        }
-
-        /* Force dark mode text correction */
-        @media (prefers-color-scheme: dark) {
-            .assistant .stMarkdown {
-                background-color: #222222 !important;  /* Dark background */
-                color: white !important;  /* White text for dark mode */
-            }
         }
 
         /* Input box styling */
@@ -74,7 +62,6 @@ st.markdown("""
             border-radius: 8px;
             border: 1px solid #ccc;
             width: 100%;
-            color: black !important;
         }
 
         /* Add spacing between messages and input */
