@@ -1,4 +1,7 @@
-# nixpacks.toml
+[build]
+# Specify the Python version
+python = "3.9"
 
 [start]
-cmd = "streamlit run chat.py"
+# Use the streamlit run command to start your app
+cmd = "streamlit run chat.py --server.port=$PORT"
